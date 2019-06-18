@@ -1,5 +1,12 @@
 image:
 - Visual Studio 2017
 
+environment:
+  GOOS: windows
+  GOARCH: amd64
+  CGO_ENABLED: 1
+  CC: C:\mingw-w64\x86_64-7.2.0-posix-seh-rt_v5-rev1\mingw64\bin\gcc.exe
+  CXX: C:\mingw-w64\x86_64-7.2.0-posix-seh-rt_v5-rev1\mingw64\bin\g++.exe
+
 build_script:
-  - GOOS=windows GOARCH=amd64 CGO_ENABLED=1 CC=C:\mingw-w64\x86_64-7.2.0-posix-seh-rt_v5-rev1\mingw64\bin\gcc.exe CXX=C:\mingw-w64\x86_64-7.2.0-posix-seh-rt_v5-rev1\mingw64\bin\g++.exe go build -x ./
+  - go build -x ./
